@@ -22,19 +22,26 @@
 
 /* Login container styling */
 .pf-v5-c-login__container {
-    grid-template-columns: 400px;
+    grid-template-columns: 1fr;
     justify-content: center;
     grid-template-areas: "header"
                          "main";
-    gap: 24px;
+    gap: 8px;
     padding: 60px 20px;
     min-height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center; /* This centers all grid items horizontally */
 }
 
 /* Header with logo */
 .pf-v5-c-login__header {
     grid-area: header;
     text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the header content */
+    align-items: center;
 }
 
 #kc-header-wrapper {
@@ -47,6 +54,7 @@
     overflow: hidden;
     font-size: 0;
     color: transparent;
+    display: block; /* Ensure block display */
 }
 
 /* Main login card */
@@ -58,7 +66,11 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     border-top: none;
     animation: fadeInUp 0.6s ease-out;
-    max-width: 400px;
+    width: 540px;
+    height: auto;
+    max-width: 90vw; /* Ensure it fits on smaller screens */
+    margin: 0 auto;
+    justify-self: center; /* Center the main card in its grid area */
 }
 
 /* Remove default card top border */
@@ -102,7 +114,7 @@
     width: 100%;
     padding: 16px;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 16px;
     font-size: 14px;
     background: #ffffff;
     transition: all 0.2s ease;
@@ -114,6 +126,7 @@
     outline: none;
     border-color: #667eea;
     box-shadow: 0 0 0 1px #667eea;
+    border-radius: 16px;
 }
 
 .pf-v5-c-form-control::placeholder {
@@ -444,12 +457,18 @@
     .pf-v5-c-login__container {
         grid-template-columns: 1fr;
         padding: 20px 16px;
-        gap: 16px;
+        gap: 4px;
+        justify-items: center; /* Keep centering on mobile */
     }
 
     #kc-header-wrapper {
         height: 60px;
         width: 200px;
+    }
+
+    .pf-v5-c-login__main {
+        width: 100%;
+        max-width: 400px;
     }
 
     .pf-v5-c-login__main-header {
