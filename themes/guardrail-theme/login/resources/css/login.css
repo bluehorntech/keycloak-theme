@@ -95,9 +95,9 @@
 }
 
 /* Form groups */
-.pf-v5-c-form__group {
-    margin-bottom: 20px;
-}
+/* .pf-v5-c-form__group {
+    margin-bottom: 10px;
+} */
 
 /* Labels */
 .pf-v5-c-form__label,
@@ -134,19 +134,107 @@
     font-size: 14px;
 }
 
+/* Override PatternFly form control pseudo-elements that create square borders */
+.pf-v5-c-form-control::before,
+.pf-v5-c-form-control::after {
+    display: none !important;
+    border: none !important;
+    content: none !important;
+}
+
+/* Also override for span wrappers */
+span.pf-v5-c-form-control::before,
+span.pf-v5-c-form-control::after {
+    display: none !important;
+    border: none !important;
+    content: none !important;
+}
+
+/* Remove all PatternFly default styling from form control wrapper */
+.pf-v5-c-form-control {
+    display: block !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    box-sizing: content-box !important;
+    position: relative;
+}
+
+/* Remove PatternFly styling from span wrapper */
+span.pf-v5-c-form-control {
+    display: block !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    box-sizing: content-box !important;
+}
+
+/* Apply all styling to the actual input element */
+.pf-v5-c-form-control input,
+span.pf-v5-c-form-control input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 14px;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    color: #2d3748;
+    position: relative;
+    z-index: 1;
+}
+
+.pf-v5-c-form-control input:focus,
+span.pf-v5-c-form-control input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 1px #667eea;
+    border-radius: 16px;
+}
+
+.pf-v5-c-form-control input::placeholder,
+span.pf-v5-c-form-control input::placeholder {
+    color: #a0aec0;
+    font-size: 14px;
+}
+
+/* Error states - target the input element */
+.pf-v5-c-form-control.pf-m-error input,
+.pf-v5-c-form-control input[aria-invalid="true"],
+span.pf-v5-c-form-control.pf-m-error input,
+span.pf-v5-c-form-control input[aria-invalid="true"] {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 1px #e53e3e;
+    border-radius: 16px;
+}
+
+.pf-v5-c-form-control.pf-m-error input:focus,
+.pf-v5-c-form-control input[aria-invalid="true"]:focus,
+span.pf-v5-c-form-control.pf-m-error input:focus,
+span.pf-v5-c-form-control input[aria-invalid="true"]:focus {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 1px #e53e3e;
+    border-radius: 16px;
+}
+
 /* Input wrapper span styling */
-.pf-v5-c-form__group span.pf-v5-c-form-control {
+span.pf-v5-c-form-control {
     display: block;
     padding: 0;
     border: none;
     background: transparent;
 }
 
-.pf-v5-c-form__group span.pf-v5-c-form-control input {
+span.pf-v5-c-form-control input {
     width: 100%;
     padding: 16px;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 16px;
     font-size: 14px;
     background: #ffffff;
     transition: all 0.2s ease;
@@ -160,12 +248,47 @@
     box-shadow: 0 0 0 1px #667eea;
 }
 
-/* Error states - match red design exactly */
-.pf-v5-c-form-control.pf-m-error,
-.pf-v5-c-form__group span.pf-v5-c-form-control.pf-m-error input,
-.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control.pf-m-error input {
+/* Password field specific styling */
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control {
+    display: block !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control::before,
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control::after {
+    display: none !important;
+    border: none !important;
+    content: none !important;
+}
+
+.pf-v5-c-input-group__item.pf-m-fill input {
+    width: 100%;
+    padding: 16px 50px 16px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 14px;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    color: #2d3748;
+}
+
+.pf-v5-c-input-group__item.pf-m-fill input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 1px #667eea;
+    border-radius: 16px;
+}
+
+/* Password field error states */
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control.pf-m-error input,
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control input[aria-invalid="true"] {
     border-color: #e53e3e;
     box-shadow: 0 0 0 1px #e53e3e;
+    border-radius: 16px;
 }
 
 /* Error messages */
@@ -184,7 +307,7 @@
 .pf-v5-c-alert.pf-m-inline {
     background: #fed7d7;
     border: 1px solid #feb2b2;
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 12px 16px;
     margin-bottom: 20px;
     color: #c53030;
@@ -219,7 +342,7 @@
     width: 100%;
     padding: 16px 50px 16px 16px;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 16px;
     font-size: 14px;
     background: #ffffff;
     transition: all 0.2s ease;
@@ -364,7 +487,7 @@
     padding: 12px 16px;
     margin-bottom: 12px;
     border: 2px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 16px;
     background: white;
     color: #4a5568;
     font-size: 14px;
