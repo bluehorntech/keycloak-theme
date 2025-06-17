@@ -6,8 +6,8 @@
     --keycloak-logo-height: 80px;
     --keycloak-logo-width: 300px;
     --keycloak-card-top-color: transparent;
-    --guardrail-primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --guardrail-primary-hover: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    --guardrail-primary-gradient: linear-gradient(135deg, #9EC0FA 0%, #C4ADFA 100%);
+    --guardrail-primary-hover: linear-gradient(135deg, #8FB1F9 0%, #BFA0F9 100%);
 }
 
 /* Body and main background */
@@ -301,7 +301,7 @@
 .pf-v5-c-button.pf-m-primary {
     background: var(--guardrail-primary-gradient);
     border: none;
-    border-radius: 8px;
+    border-radius: 16px;
     color: white;
     font-size: 16px;
     font-weight: 600;
@@ -439,13 +439,14 @@
     display: block;
     background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center;
     background-size: cover;
-    margin: 16px -32px -24px;
-    padding: 20px 32px 32px;
-    border-radius: 0 0 12px 12px;
+    margin: 0 -32px 16px;
+    padding: 0 32px 32px;
+    border-radius: 12px 12px 0 0;
     text-align: center;
     font-size: 14px;
     color: #718096;
     cursor: pointer;
+    order: -1;
 }
 
 .pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after:hover {
