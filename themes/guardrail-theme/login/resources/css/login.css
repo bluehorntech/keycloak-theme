@@ -992,3 +992,95 @@ span.pf-v5-c-form-control.pf-m-error input:focus {
 .pf-v5-c-input-group__item:not(.pf-m-fill) {
     z-index: 10 !important; /* Higher than error icon */
 }
+
+
+.pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after {
+    content: "Don't have an account? Get Started Now";
+    display: block;
+    background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center;
+    background-size: cover;
+    margin: 16px -32px -24px;
+    margin-bottom: 10px;
+    padding: 20px 32px 32px;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #718096;
+    cursor: pointer;
+}
+
+
+.pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after:hover {
+    color: #667eea;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+    .pf-v5-c-login__container {
+        grid-template-columns: 1fr;
+        padding: 20px 16px;
+        gap: 16px;
+    }
+
+    #kc-header-wrapper {
+        height: 60px;
+        width: 200px;
+    }
+
+    .pf-v5-c-login__main-header {
+        padding: 24px 20px 0;
+    }
+
+    .pf-v5-c-login__main-body {
+        padding: 0 20px 24px;
+    }
+
+    .pf-v5-c-login__main-footer {
+        padding: 0 20px 24px;
+    }
+
+    .pf-v5-c-title.pf-m-3xl {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    #kc-info,
+    #kc-registration-container,
+    .pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after {
+        margin: 16px -20px -24px;
+        padding: 16px 20px 24px;
+        border-radius: 0 0 12px 12px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Locale dropdown - hide for clean look */
+.pf-v5-c-login__main-header-utilities {
+    display: none;
+}
+
+/* Dark mode overrides (if enabled) */
+.pf-v5-theme-dark {
+    /* Keep light theme for Guardrail */
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    #kc-header-wrapper {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
