@@ -341,7 +341,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     width: 100%;
     cursor: pointer;
     transition: all 0.2s ease;
-    margin: 24px 0;
+    margin: 8px 0 !important; /* Reduce from 24px to 8px */
 }
 
 .pf-v5-c-button.pf-m-primary:hover {
@@ -356,7 +356,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 
 /* Form actions */
 .pf-v5-c-form__actions {
-    margin-top: 20px;
+    margin-top: 8px !important; /* Reduce from 20px to 8px */
 }
 
 /* Alert styling */
@@ -433,8 +433,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     .pf-v5-c-login__container {
         grid-template-columns: 1fr;
         padding: 20px 16px;
-        gap: 4px;
-        justify-items: center;
+        gap: 16px;
     }
 
     #kc-header-wrapper {
@@ -461,7 +460,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     }
 
     #kc-info,
-    #kc-registration-container {
+    #kc-registration-container,
+    .pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after {
         margin: 16px -20px -24px;
         padding: 16px 20px 24px;
         border-radius: 0 0 12px 12px;
@@ -474,6 +474,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -491,7 +492,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 /* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
     #kc-header-wrapper {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
@@ -1014,6 +1016,27 @@ span.pf-v5-c-form-control.pf-m-error input:focus {
     color: #667eea;
 }
 
+.pf-v5-c-login__main-footer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 32px;
+}
+
+/* Center any content inside the footer */
+.pf-v5-c-login__main-footer * {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Center links and text in the footer */
+.pf-v5-c-login__main-footer a {
+    display: inline-block;
+    text-align: center;
+}
+
 /* Mobile responsive */
 @media (max-width: 767px) {
     .pf-v5-c-login__container {
@@ -1036,7 +1059,9 @@ span.pf-v5-c-form-control.pf-m-error input:focus {
     }
 
     .pf-v5-c-login__main-footer {
-        padding: 0 20px 24px;
+        
+        padding: 16px 20px;
+        text-align: center;
     }
 
     .pf-v5-c-title.pf-m-3xl {
@@ -1083,4 +1108,87 @@ span.pf-v5-c-form-control.pf-m-error input:focus {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
     }
+}
+
+/* Add this to your existing CSS file - fix the Sign In button spacing */
+
+/* Remove extra padding from form actions */
+.pf-v5-c-form__actions.pf-v5-u-pt-xs {
+    padding-top: 0 !important; /* Remove the top padding utility class */
+}
+
+/* Reduce margin on the form group containing the button */
+.pf-v5-c-form__group:has(.pf-v5-c-form__actions) {
+    margin-bottom: 16px !important; /* Reduce bottom margin */
+    margin-top: 8px !important; /* Reduce top margin */
+}
+
+/* Override the existing button margin that's set to 24px 0 */
+.pf-v5-c-button.pf-m-primary {
+    background: var(--guardrail-primary-gradient);
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 24px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 8px 0 !important; /* Reduce from 24px to 8px */
+}
+
+/* Also target the button in form actions specifically */
+.pf-v5-c-form__actions .pf-v5-c-button.pf-m-primary {
+    margin: 0 !important; /* Remove all margin when inside form actions */
+}
+
+/* Reduce spacing after password helper text */
+.pf-v5-c-form__helper-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px !important; /* Reduce bottom margin */
+}
+
+/* Ensure error containers don't add extra space when empty */
+#input-error-container-username,
+#input-error-container-password {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#input-error-container-username:empty,
+#input-error-container-password:empty {
+    display: none;
+}
+
+/* Reduce spacing between form groups */
+.pf-v5-c-form__group {
+    margin-bottom: 16px !important; /* Reduce from 20px to 16px */
+}
+
+/* Special handling for the last form group before the button */
+.pf-v5-c-form__group:has(.pf-v5-c-input-group) {
+    margin-bottom: 12px !important; /* Even less space after password field */
+}
+
+/* Override PatternFly utility classes that might be adding extra spacing */
+.pf-v5-u-pt-xs {
+    padding-top: 0 !important;
+}
+
+.pf-v5-u-pb-xs {
+    padding-bottom: 4px !important; /* Reduce label bottom padding */
+}
+
+/* Tighten up the form group labels */
+.pf-v5-c-form__group-label {
+    margin-bottom: 4px !important; /* Reduce space between label and input */
+}
+
+/* Make sure form actions don't add extra margin */
+.pf-v5-c-form__actions {
+    margin-top: 8px !important; /* Reduce from 20px to 8px */
 }
