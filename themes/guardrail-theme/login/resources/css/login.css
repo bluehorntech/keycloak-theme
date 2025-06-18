@@ -66,7 +66,7 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     border-top: none;
     animation: fadeInUp 0.6s ease-out;
-    width: 700px;
+    width: 540px;
     height: auto;
     max-width: 90vw;
     margin: 0 auto;
@@ -691,4 +691,5 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     align-items: center;
     justify-content: center;
     padding: 24px 32px;
+    cursor: pointer;
 }
