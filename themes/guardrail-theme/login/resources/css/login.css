@@ -865,97 +865,130 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     background-size: 16px 16px;
 }
 
-/* Form group and label styling */
-.pf-v5-c-form__group {
-    margin-bottom: 20px;
+/* Error icon styling for form controls */
+
+/* Hide the separate error icon container and position it inside the input */
+.pf-v5-c-form-control__utilities {
+    position: absolute !important;
+    top: 50% !important;
+    right: 16px !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    width: auto !important;
+    height: auto !important;
+    pointer-events: none !important; /* Prevent blocking input interactions */
 }
 
-.pf-v5-c-form__label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #4a5568;
-    margin-bottom: 8px;
-    display: block;
-}
-
-/* Error label styling */
-.pf-v5-c-form__group:has([aria-invalid="true"]) .pf-v5-c-form__label,
-.pf-v5-c-form__group:has(.pf-m-error) .pf-v5-c-form__label {
-    color: #e53e3e;
-}
-
-/* Password input group styling */
-.pf-v5-c-input-group {
-    position: relative;
-    display: block;
-    width: 100%;
-}
-
-.pf-v5-c-input-group__item.pf-m-fill {
-    width: 100%;
-    position: relative;
-}
-
-.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: none;
-    background: transparent;
-}
-
-.pf-v5-c-input-group__item.pf-m-fill input {
-    width: 100%;
-    padding: 16px 50px 16px 16px;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    font-size: 14px;
-    background: #ffffff;
-    transition: all 0.2s ease;
-    box-sizing: border-box;
-    color: #2d3748;
-    font-family: inherit;
-}
-
-.pf-v5-c-input-group__item.pf-m-fill input:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 1px #667eea;
-}
-
-/* Password toggle button */
-.pf-v5-c-input-group__item:not(.pf-m-fill) {
-    position: absolute;
-    top: 50%;
-    right: 16px;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.pf-v5-c-input-group__item .pf-v5-c-button.pf-m-control {
+.pf-v5-c-form-control__icon.pf-m-status {
     background: none !important;
     border: none !important;
-    padding: 4px !important;
+    padding: 0 !important;
     margin: 0 !important;
-    color: #9ca3af !important;
-    cursor: pointer !important;
-    min-width: auto !important;
-    box-shadow: none !important;
+    color: #e53e3e !important;
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-.pf-v5-c-input-group__item .pf-v5-c-button.pf-m-control::before,
-.pf-v5-c-input-group__item .pf-v5-c-button.pf-m-control::after {
+.pf-v5-c-form-control__icon.pf-m-status::before,
+.pf-v5-c-form-control__icon.pf-m-status::after {
     display: none !important;
     content: none !important;
     border: none !important;
 }
 
-.pf-v5-c-input-group__item .pf-v5-c-button.pf-m-control:hover {
-    color: #667eea !important;
-    background: none !important;
+.pf-v5-c-form-control__icon.pf-m-status i {
+    font-size: 16px !important;
+    color: #e53e3e !important;
+    display: block !important;
+    line-height: 1 !important;
 }
 
-.pf-v5-c-input-group__item .pf-v5-c-button.pf-m-control i {
-    font-size: 16px;
-    line-height: 1;
+/* Remove the background-image from error inputs since we're using the icon */
+input.pf-v5-c-form-control[aria-invalid="true"],
+input.pf-v5-c-form-control.pf-m-error,
+span.pf-v5-c-form-control.pf-m-error input,
+span.pf-v5-c-form-control input[aria-invalid="true"] {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 1px #e53e3e !important;
+    padding-right: 50px !important;
+    background-image: none !important; /* Remove the CSS background icon */
+}
+
+/* For span wrapper with error class and utilities */
+span.pf-v5-c-form-control.pf-m-error {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+span.pf-v5-c-form-control.pf-m-error::before,
+span.pf-v5-c-form-control.pf-m-error::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+}
+
+span.pf-v5-c-form-control.pf-m-error input {
+    width: 100% !important;
+    padding: 16px 50px 16px 16px !important;
+    border: 1px solid #e53e3e !important;
+    border-radius: 16px !important;
+    font-size: 14px !important;
+    background: #ffffff !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+    color: #2d3748 !important;
+    font-family: inherit !important;
+}
+
+span.pf-v5-c-form-control.pf-m-error input:focus {
+    outline: none !important;
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 1px #e53e3e !important;
+}
+
+/* Handle cases where both error icon and password eye icon might be present */
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control.pf-m-error input {
+    padding-right: 80px !important; /* Extra space for both icons */
+}
+
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control.pf-m-error .pf-v5-c-form-control__utilities {
+    right: 50px !important; /* Position error icon before eye button */
+}
+
+/* Password field error states with proper icon positioning */
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control.pf-m-error input,
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control input[aria-invalid="true"] {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 1px #e53e3e !important;
+    border-radius: 16px !important;
+    padding-right: 80px !important; /* Space for both error icon and eye button */
+    background-image: none !important;
+}
+
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control.pf-m-error input:focus,
+.pf-v5-c-input-group__item.pf-m-fill span.pf-v5-c-form-control input[aria-invalid="true"]:focus {
+    border-color: #e53e3e !important;
+    box-shadow: 0 0 0 1px #e53e3e !important;
+    border-radius: 16px !important;
+}
+
+/* Make sure the password toggle button is positioned correctly when there's an error */
+.pf-v5-c-input-group__item.pf-m-fill:has(.pf-v5-c-form-control.pf-m-error) ~ .pf-v5-c-input-group__item:not(.pf-m-fill) {
+    right: 16px !important; /* Keep eye button at the right edge */
+}
+
+/* Ensure proper stacking order */
+.pf-v5-c-form-control__utilities {
+    z-index: 5 !important; /* Lower than password button */
+}
+
+.pf-v5-c-input-group__item:not(.pf-m-fill) {
+    z-index: 10 !important; /* Higher than error icon */
 }
