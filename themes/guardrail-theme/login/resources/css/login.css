@@ -385,9 +385,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 
 /* Registration section */
 #kc-info {
-    background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center;
+    /* background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center; */
     background-size: cover;
-    margin: 16px -32px -24px;
     padding: 20px 32px 32px;
     border-radius: 0 0 12px 12px;
     text-align: center;
@@ -414,7 +413,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 #kc-registration-container {
-    background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center;
+    /* background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center; */
     background-size: cover;
     margin: 16px -32px -24px;
     padding: 20px 32px 32px;
@@ -693,3 +692,4 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     padding: 24px 32px;
     cursor: pointer;
 }
+
