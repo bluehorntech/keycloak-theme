@@ -680,16 +680,16 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 
-.pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after {
-    content: "Don't have an account? Get Started Now";
-    /* background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center; */
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 32px;
-    cursor: pointer;
-}
+/*.pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after {*/
+/*    content: "Don't have an account? Get Started Now";*/
+/*    !* background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center; *!*/
+/*    background-size: cover;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    padding: 24px 32px;*/
+/*    cursor: pointer;*/
+/*}*/
 
