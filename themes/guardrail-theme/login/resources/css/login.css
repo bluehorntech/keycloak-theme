@@ -95,9 +95,9 @@
 }
 
 /* Form groups */
-.pf-v5-c-form__group {
-    margin-bottom: 20px;
-}
+/*.pf-v5-c-form__group {*/
+/*    margin-bottom: 20px;*/
+/*}*/
 
 /* Labels */
 .pf-v5-c-form__label {
@@ -390,6 +390,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     padding: 20px 32px 32px;
     border-radius: 0 0 12px 12px;
     text-align: center;
+    border-top: none;
 }
 
 #kc-info-wrapper {
@@ -513,10 +514,10 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 /* Reduce margin on the form group containing the button */
-.pf-v5-c-form__group:has(.pf-v5-c-form__actions) {
-    margin-bottom: 16px !important; /* Reduce bottom margin */
-    margin-top: 8px !important; /* Reduce top margin */
-}
+/*.pf-v5-c-form__group:has(.pf-v5-c-form__actions) {*/
+/*    margin-bottom: 16px !important; !* Reduce bottom margin *!*/
+/*    margin-top: 8px !important; !* Reduce top margin *!*/
+/*}*/
 
 /* Override the existing button margin that's set to 24px 0 */
 .pf-v5-c-button.pf-m-primary {
@@ -560,9 +561,9 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 /* Reduce spacing between form groups */
-.pf-v5-c-form__group {
-    margin-bottom: 16px !important; /* Reduce from 20px to 16px */
-}
+/*.pf-v5-c-form__group {*/
+/*    margin-bottom: 16px !important; !* Reduce from 20px to 16px *!*/
+/*}*/
 
 /* Special handling for the last form group before the button */
 .pf-v5-c-form__group:has(.pf-v5-c-input-group) {
