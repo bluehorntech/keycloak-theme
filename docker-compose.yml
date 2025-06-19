@@ -17,14 +17,13 @@ services:
       KC_HTTP_ENABLED: "true"
       KC_HOSTNAME_STRICT: "false"
       KC_HOSTNAME_STRICT_HTTPS: "false"
-      # Update hostname to match your domain
+      # Use the dev environment domain
       KC_HOSTNAME: "keycloak.careviah.com"
       KC_PROXY: "edge"
-      # Remove the relative path as Dokploy handles routing
-      # KC_HTTP_RELATIVE_PATH: "/auth"
-      # Add these for proper proxy handling
       KC_PROXY_HEADERS: "xforwarded"
       KC_HOSTNAME_STRICT_BACKCHANNEL: "false"
+      # Add frontend URL for proper redirects
+      KC_FRONTEND_URL: "https://keycloak.careviah.com"
     ports:
       - "8100:8100"
     depends_on:
