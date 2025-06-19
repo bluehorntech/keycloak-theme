@@ -17,6 +17,10 @@ services:
       KC_HTTP_ENABLED: "true"
       KC_HOSTNAME: "keycloak.dev.careviah.com"
       KC_PROXY_HEADERS: "xforwarded"
+      KC_PROXY: "edge"
+      KC_HOSTNAME_STRICT: "false"
+      KC_HOSTNAME_STRICT_HTTPS: "false"
+      KC_HOSTNAME_STRICT_BACKCHANNEL: "false"      
       
     ports:
       - "8100:8100"
