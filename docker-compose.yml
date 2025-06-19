@@ -6,22 +6,23 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: keycloak
+    env_file:
+      - .env
     environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_DB: postgres
-      KC_DB_URL_HOST: development-postgres-xoml87
-      KC_DB_USERNAME: application
-      KC_DB_PASSWORD: cisvo0-Foczac-pyscak
-      KC_HTTP_PORT: 8100
-      KC_HTTP_ENABLED: "true"
-      KC_HOSTNAME: "keycloak.dev.careviah.com"
-      KC_PROXY_HEADERS: "xforwarded"
-      KC_PROXY: "edge"
-      KC_HOSTNAME_STRICT: "false"
-      KC_HOSTNAME_STRICT_HTTPS: "false"
-      KC_HOSTNAME_STRICT_BACKCHANNEL: "false"      
-      
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB: ${KC_DB}
+      KC_DB_URL_HOST: ${KC_DB_URL_HOST}
+      KC_DB_USERNAME: ${KC_DB_USERNAME}
+      KC_DB_PASSWORD: ${KC_DB_PASSWORD}
+      KC_HTTP_PORT: ${KC_HTTP_PORT}
+      KC_HTTP_ENABLED: ${KC_HTTP_ENABLED}
+      KC_HOSTNAME: ${KC_HOSTNAME}
+      KC_PROXY_HEADERS: ${KC_PROXY_HEADERS}
+      KC_PROXY: ${KC_PROXY}
+      KC_HOSTNAME_STRICT: ${KC_HOSTNAME_STRICT}
+      KC_HOSTNAME_STRICT_HTTPS: ${KC_HOSTNAME_STRICT_HTTPS}
+      KC_HOSTNAME_STRICT_BACKCHANNEL: ${KC_HOSTNAME_STRICT_BACKCHANNEL}
     ports:
       - "8100:8100"
     depends_on:
@@ -32,10 +33,12 @@ services:
   keycloak-db:
     image: postgres:15
     container_name: keycloak-db
+    env_file:
+      - .env
     environment:
-      POSTGRES_DB: keycloak
-      POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: keycloak
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - pgdata:/var/lib/postgresql/data
 

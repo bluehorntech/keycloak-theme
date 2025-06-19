@@ -154,7 +154,7 @@ input.pf-v5-c-form-control.pf-m-error {
     border-color: #e53e3e !important;
     box-shadow: 0 0 0 1px #e53e3e !important;
     padding-right: 50px !important;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23e53e3e'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m6 3v1.5m0 1.5h.01'/%3e%3c/svg%3e") !important;
+    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23e53e3e'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m6 3v1.5m0 1.5h.01'/%3e%3c/svg%3e") !important; */
     background-repeat: no-repeat !important;
     background-position: right 16px center !important;
     background-size: 16px 16px !important;
@@ -207,7 +207,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     border-color: #e53e3e !important;
     box-shadow: 0 0 0 1px #e53e3e !important;
     padding-right: 50px !important;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23e53e3e'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m6 3v1.5m0 1.5h.01'/%3e%3c/svg%3e") !important;
+    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23e53e3e'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m6 3v1.5m0 1.5h.01'/%3e%3c/svg%3e") !important; */
     background-repeat: no-repeat !important;
     background-position: right 16px center !important;
     background-size: 16px 16px !important;
