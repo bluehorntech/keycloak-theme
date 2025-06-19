@@ -15,7 +15,7 @@ services:
       KC_DB_PASSWORD: cisvo0-Foczac-pyscak
       KC_HTTP_PORT: 8100
       KC_HTTP_ENABLED: "true"
-      KC_HOSTNAME: "keycloak.careviah.com"
+      KC_HOSTNAME: "keycloak.dev.careviah.com"
       KC_PROXY_HEADERS: "xforwarded"
       
     ports:
