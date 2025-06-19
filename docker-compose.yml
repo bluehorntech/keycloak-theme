@@ -13,8 +13,9 @@ services:
       KC_DB_URL_HOST: "18.216.27.57"
       KC_DB_USERNAME: application
       KC_DB_PASSWORD: cisvo0-Foczac-pyscak
+      KC_HTTP_PORT: 8100
     ports:
-      - "8080:8080"
+      - "8100:8100"
     depends_on:
       - keycloak-db
     volumes:
