@@ -20,6 +20,7 @@ services:
       KC_HOSTNAME: "18.216.27.57"
       # KC_PROXY_HEADERS: "xforwarded"
       KC_PROXY: "edge"
+      KC_HTTP_RELATIVE_PATH: "/auth"      
     ports:
       - "8100:8100"
     depends_on:
