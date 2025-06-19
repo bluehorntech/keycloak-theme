@@ -18,6 +18,8 @@ services:
       KC_HOSTNAME_STRICT: false
       # KC_HOSTNAME_STRICT_HTTPS: false
       KC_HOSTNAME: 18.216.27.57
+      KC_PROXY: edge
+      KC_HOSTNAME_STRICT_BACKCHANNEL: false      
     ports:
       - "8100:8100"
     depends_on:
