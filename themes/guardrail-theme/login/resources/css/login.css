@@ -695,6 +695,157 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     }
 }
 
+#social-facebook {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    color: #1a202c !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    padding: 14px 24px !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    margin: 8px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+#social-facebook:hover {
+    background: #f7fafc !important;
+    border-color: #cbd5e0 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+#social-facebook:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Facebook icon styling */
+#social-facebook svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: #1877f2 !important;
+    /* Facebook blue color */
+    flex-shrink: 0 !important;
+}
+
+/* Facebook button text */
+#social-facebook span {
+    margin: 0 !important;
+    font-weight: 500 !important;
+    color: #1a202c !important;
+}
+
+/* Override PatternFly utility classes for Facebook button */
+#social-facebook.pf-v5-u-justify-content-space-between {
+    justify-content: center !important;
+}
+
+#social-facebook.pf-v5-u-m-auto {
+    margin: 0 !important;
+}
+
+#social-facebook span.pf-v5-u-m-auto {
+    margin: 0 !important;
+}
+
+/* Remove any PatternFly secondary button styling */
+#social-facebook.pf-m-secondary::before,
+#social-facebook.pf-m-secondary::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Override any other PatternFly button states */
+#social-facebook.pf-v5-c-button {
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+#social-google {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    color: #1a202c !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    padding: 14px 24px !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    margin: 8px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+#social-google:hover {
+    background: #f7fafc !important;
+    border-color: #cbd5e0 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+#social-google:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Google icon styling */
+#social-google svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: #4285f4 !important;
+    /* Google blue color */
+    flex-shrink: 0 !important;
+}
+
+/* Google button text */
+#social-google span {
+    margin: 0 !important;
+    font-weight: 500 !important;
+    color: #1a202c !important;
+}
+
+/* Override PatternFly utility classes for Google button */
+#social-google.pf-v5-u-justify-content-space-between {
+    justify-content: center !important;
+}
+
+#social-google.pf-v5-u-m-auto {
+    margin: 0 !important;
+}
+
+#social-google span.pf-v5-u-m-auto {
+    margin: 0 !important;
+}
+
+/* Remove any PatternFly secondary button styling */
+#social-google.pf-m-secondary::before,
+#social-google.pf-m-secondary::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Override any other PatternFly button states */
+#social-google.pf-v5-c-button {
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+
+
+
 
 /*.pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after {*/
 /*    content: "Don't have an account? Get Started Now";*/
