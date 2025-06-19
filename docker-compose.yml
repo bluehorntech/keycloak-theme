@@ -20,8 +20,8 @@ services:
       KC_PROXY: "edge"
       KC_HOSTNAME_STRICT: "false"
       KC_HOSTNAME_STRICT_HTTPS: "false"
-      KC_HOSTNAME_STRICT_BACKCHANNEL: "false"      
-      
+      # KC_HOSTNAME_STRICT_BACKCHANNEL: "false"      
+      KC_FRONTEND_URL: "https://keycloak.dev.careviah.com"
     ports:
       - "8100:8100"
     depends_on:
