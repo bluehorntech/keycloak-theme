@@ -843,6 +843,10 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     position: relative !important;
 }
 
+#reset-login {
+    display: none !important; /* Hide the reset login button */
+}
+
 
 
 
