@@ -10,6 +10,7 @@
     --guardrail-primary-hover: linear-gradient(135deg, #8FB1F9 0%, #BFA0F9 100%);
 }
 
+
 /* Login container styling */
 /*.pf-v5-c-login__container {*/
 /*    width: 540px !important;*/
@@ -832,5 +833,20 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 input.pf-v5-c-form-control::placeholder {
     color: rgba(0, 0, 0, 0.6) !important;
     font-size: 14px !important;
+}
+
+.pf-v5-c-alert.pf-m-inline.pf-v5-u-mb-md.pf-m-warning {
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    border-top-color: #ED6C02
+}
+
+
+
+span.pf-v5-c-alert__title.kc-feedback-text {
+    color: #ED6C02
 }
 
