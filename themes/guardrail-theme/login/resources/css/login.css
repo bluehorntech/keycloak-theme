@@ -2,47 +2,107 @@
 
 :root {
     --keycloak-logo-url: url("https://app.live.guardrail.tech/static/media/logo-4.42f5a44e6d00084f4209f56967e7e386.svg");
-    --keycloak-bg-logo-url: url("../img/Background.svg");
-    --keycloak-logo-height: 80px;
+    --keycloak-bg-logo-url: url("../img/guardrail-bg.svg");
+    --keycloak-logo-height: 63px;
     --keycloak-logo-width: 300px;
     --keycloak-card-top-color: transparent;
     --guardrail-primary-gradient: linear-gradient(135deg, #9EC0FA 0%, #C4ADFA 100%);
     --guardrail-primary-hover: linear-gradient(135deg, #8FB1F9 0%, #BFA0F9 100%);
 }
 
-/* Body and main background */
-.login-pf body,
-#keycloak-bg {
-    background: var(--keycloak-bg-logo-url) no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+/* Login container styling */
+/*.pf-v5-c-login__container {*/
+/*    width: 540px !important;*/
+/*    display: flex !important;*/
+/*    flex-direction: column !important;*/
+/*    justify-content: flex-start !important;*/
+/*    align-items: center !important;*/
+/*    gap: 40px !important;*/
+/*    padding: 0 !important;*/
+/*    margin: auto !important;*/
+/*    background: transparent !important;*/
+/*    box-shadow: none !important;*/
+/*}*/
+.pf-v5-c-login__container {
+    grid-template-columns: 34rem;
+    grid-template-areas: "header"
+                         "main"
+}
+/* Remove default card top border */
+.pf-v5-c-login__main-header {
+    border-top: none;
+    padding: 32px 32px 0;
+    text-align: center;
 }
 
-/* Login container styling */
-.pf-v5-c-login__container {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    grid-template-areas: "header"
-                         "main";
-    gap: 8px;
-    padding: 60px 20px;
-    min-height: 100vh;
-    display: grid;
-    align-items: center;
-    justify-items: center;
+/* Info section - top margin + bottom padding */
+/*.pf-v5-c-login__main-footer-band:first-child {*/
+/*    margin-block-start: var(--pf-v5-global--spacer--lg);*/
+/*}*/
+
+/*.pf-v5-c-login__main-footer-band:last-child {*/
+/*    padding-bottom: 0;*/
+/*}*/
+
+
+/* Info section */
+.login-pf body{
+    background: var(--keycloak-bg-logo-url) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+div.kc-logo-text {
+    background-image: var(--keycloak-logo-url);
+    height: var(--keycloak-logo-height);
+    width: var(--keycloak-logo-width);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+div.kc-logo-text span {
+    display: none;
+}
+
+.kc-login-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.kc-login-tooltip .kc-tooltip-text{
+    top:-3px;
+    left:160%;
+    background-color: black;
+    visibility: hidden;
+    color: #fff;
+
+    min-width:130px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow:0 1px 8px rgba(0,0,0,0.6);
+    padding: 5px;
+
+    position: absolute;
+    opacity:0;
+    transition:opacity 0.5s;
+}
+
+/*Show tooltip*/
+.kc-login-tooltip:hover .kc-tooltip-text {
+    visibility: visible;
+    opacity:0.7;
 }
 
 /* Header with logo */
-.pf-v5-c-login__header {
-    grid-area: header;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/*.pf-v5-c-login__header {*/
+/*    grid-area: header;*/
+/*    text-align: center;*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
 
 #kc-header-wrapper {
     background: var(--keycloak-logo-url) no-repeat center center;
@@ -54,30 +114,23 @@
     overflow: hidden;
     font-size: 0;
     color: transparent;
-    display: block;
+    /*display: block;*/
 }
 
 /* Main login card */
 .pf-v5-c-login__main {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
+    /*background: rgba(255, 255, 255, 0.98);*/
+    /*backdrop-filter: blur(10px);*/
+    /*border: 1px solid rgba(255, 255, 255, 0.3);*/
+    border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    border-top: none;
-    animation: fadeInUp 0.6s ease-out;
-    width: 540px;
-    height: auto;
-    max-width: 90vw;
-    margin: 0 auto;
-    justify-self: center;
-}
-
-/* Remove default card top border */
-.pf-v5-c-login__main-header {
-    border-top: none;
-    padding: 32px 32px 0;
-    text-align: center;
+    /*border-top: none;*/
+    /*animation: fadeInUp 0.6s ease-out;*/
+    /*width: 540px;*/
+    /*height: auto;*/
+    /*max-width: 90vw;*/
+    /*margin: 0 auto;*/
+    /*justify-self: center;*/
 }
 
 /* Main title styling */
@@ -331,17 +384,16 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 
 /* Primary button styling */
 .pf-v5-c-button.pf-m-primary {
-    background: var(--guardrail-primary-gradient);
-    border: none;
-    border-radius: 16px;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 14px 24px;
-    width: 100%;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    margin: 8px 0 !important; /* Reduce from 24px to 8px */
+    background: linear-gradient(90deg, #9EC0FA 0%, #C4ADFA 100%) !important;
+    border: none !important;
+    border-radius: 999px !important; /* pill shape */
+    padding: 16px 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-shadow: none !important;
 }
 
 .pf-v5-c-button.pf-m-primary:hover {
@@ -441,10 +493,10 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
         width: 200px;
     }
 
-    .pf-v5-c-login__main {
-        width: 100%;
-        max-width: 400px;
-    }
+    /*.pf-v5-c-login__main {*/
+    /*    width: 100%;*/
+    /*    max-width: 400px;*/
+    /*}*/
 
     .pf-v5-c-login__main-header {
         padding: 24px 20px 0;
@@ -455,7 +507,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     }
 
     .pf-v5-c-login__main-footer {
-        
+
         padding: 16px 20px;
         text-align: center;
     }
@@ -673,13 +725,12 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
         align-items: flex-start !important;
         gap: 8px !important;
     }
-    
+
     .pf-v5-c-check__label,
     .pf-v5-c-helper-text__item-text a {
         white-space: normal !important;
     }
 }
-
 
 #kc-social-providers svg:not(.google) {
     filter: invert(47%) sepia(88%) saturate(7486%) hue-rotate(199deg) brightness(91%) contrast(101%);
@@ -695,7 +746,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     }
 }
 
-#social-facebook {
+/* === Generic Style for All Social Login Buttons === */
+#kc-social-providers a.pf-v5-c-button.pf-m-secondary {
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
     border-radius: 16px !important;
@@ -713,154 +765,72 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     gap: 12px !important;
     text-decoration: none !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
 }
 
-#social-facebook:hover {
+/* === Hover and Active States === */
+#kc-social-providers a.pf-v5-c-button.pf-m-secondary:hover {
     background: #f7fafc !important;
     border-color: #cbd5e0 !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
-#social-facebook:active {
+#kc-social-providers a.pf-v5-c-button.pf-m-secondary:active {
     transform: translateY(0) !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Facebook icon styling */
-#social-facebook svg {
+/* === Icon Styling (SVG) === */
+#kc-social-providers a.pf-v5-c-button svg {
     width: 20px !important;
     height: 20px !important;
-    fill: #1877f2 !important;
-    /* Facebook blue color */
     flex-shrink: 0 !important;
+    /* Let SVG use its own brand colors – don’t override fill */
 }
 
-/* Facebook button text */
-#social-facebook span {
+/* === Button Text === */
+#kc-social-providers a.pf-v5-c-button span {
     margin: 0 !important;
+    font-size: 14px !important;
+    font-family: 'Inter', sans-serif !important;
     font-weight: 500 !important;
-    color: #1a202c !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+    line-height: 24px !important;
+    letter-spacing: 0.4px !important;
+    white-space: nowrap !important;
 }
 
-/* Override PatternFly utility classes for Facebook button */
-#social-facebook.pf-v5-u-justify-content-space-between {
+/* === Fix misaligned utility classes === */
+#kc-social-providers a.pf-v5-u-justify-content-space-between {
     justify-content: center !important;
 }
 
-#social-facebook.pf-v5-u-m-auto {
+#kc-social-providers a span.pf-v5-u-m-auto {
     margin: 0 !important;
 }
 
-#social-facebook span.pf-v5-u-m-auto {
-    margin: 0 !important;
-}
-
-/* Remove any PatternFly secondary button styling */
-#social-facebook.pf-m-secondary::before,
-#social-facebook.pf-m-secondary::after {
+/* === Remove PF secondary styling decorations === */
+#kc-social-providers a.pf-m-secondary::before,
+#kc-social-providers a.pf-m-secondary::after {
     display: none !important;
     content: none !important;
 }
 
-/* Override any other PatternFly button states */
-#social-facebook.pf-v5-c-button {
-    box-sizing: border-box !important;
-    position: relative !important;
-}
-
-#social-google {
-    background: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    border-radius: 16px !important;
-    color: #1a202c !important;
-    font-size: 16px !important;
+.pf-v5-c-form__label-text {
+    font-size: 14px !important;
+    color: rgba(0, 0, 0, 0.6) !important;
+    font-family: 'Inter', sans-serif !important;
     font-weight: 500 !important;
-    padding: 14px 24px !important;
-    width: 100% !important;
-    cursor: pointer !important;
-    transition: all 0.2s ease !important;
-    margin: 8px 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 12px !important;
-    text-decoration: none !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
-}
-
-#social-google:hover {
-    background: #f7fafc !important;
-    border-color: #cbd5e0 !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-}
-
-#social-google:active {
-    transform: translateY(0) !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Google icon styling */
-#social-google svg {
-    width: 20px !important;
-    height: 20px !important;
-    fill: #4285f4 !important;
-    /* Google blue color */
-    flex-shrink: 0 !important;
-}
-
-/* Google button text */
-#social-google span {
-    margin: 0 !important;
-    font-weight: 500 !important;
-    color: #1a202c !important;
-}
-
-/* Override PatternFly utility classes for Google button */
-#social-google.pf-v5-u-justify-content-space-between {
-    justify-content: center !important;
-}
-
-#social-google.pf-v5-u-m-auto {
-    margin: 0 !important;
-}
-
-#social-google span.pf-v5-u-m-auto {
-    margin: 0 !important;
-}
-
-/* Remove any PatternFly secondary button styling */
-#social-google.pf-m-secondary::before,
-#social-google.pf-m-secondary::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* Override any other PatternFly button states */
-#social-google.pf-v5-c-button {
-    box-sizing: border-box !important;
-    position: relative !important;
+    line-height: 12px !important;
 }
 
 #reset-login {
     display: none !important; /* Hide the reset login button */
 }
-
-
-
-
-
-/*.pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after {*/
-/*    content: "Don't have an account? Get Started Now";*/
-/*    !* background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center; *!*/
-/*    background-size: cover;*/
-/*    text-align: center;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    padding: 24px 32px;*/
-/*    cursor: pointer;*/
-/*}*/
+input.pf-v5-c-form-control::placeholder {
+    color: rgba(0, 0, 0, 0.6) !important;
+    font-size: 14px !important;
+}
 
