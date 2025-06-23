@@ -6,10 +6,20 @@
     --keycloak-logo-height: 63px;
     --keycloak-logo-width: 300px;
     --keycloak-card-top-color: transparent;
-    --guardrail-primary-gradient: linear-gradient(135deg, #9EC0FA 0%, #C4ADFA 100%);
-    --guardrail-primary-hover: linear-gradient(135deg, #8FB1F9 0%, #BFA0F9 100%);
+    --guardrail-primary-gradient: linear-gradient(180deg, #C4ADFA 0%, #9EC0FA 100%);
+    ;
+    --guardrail-primary-hover: linear-gradient(180deg, #C4ADFA 0%, #9EC0FA 100%);
+    ;
 }
 
+/* Set Inter as the default font family */
+* {
+    font-family: "Inter", "Font Awesome 5 Free", sans-serif !important;
+}
+
+body {
+    font-family: "Inter", "Font Awesome 5 Free", sans-serif !important;
+}
 
 /* Login container styling */
 /*.pf-v5-c-login__container {*/
@@ -27,13 +37,26 @@
 .pf-v5-c-login__container {
     grid-template-columns: 34rem;
     grid-template-areas: "header"
-                         "main"
+        "main"
 }
+
 /* Remove default card top border */
 .pf-v5-c-login__main-header {
     border-top: none;
     padding: 32px 32px 0;
     text-align: center;
+}
+
+.pf-v5-c-login__main-footer {
+    padding: 20px !important;
+}
+
+.pf-v5-c-login__main-footer-band pf-v5-c-form pf-v5-u-w-100 {
+    padding: 20px !important;
+}
+
+#kc-social-providers {
+    border-bottom: #d2d2d2 1px solid;
 }
 
 /* Info section - top margin + bottom padding */
@@ -47,7 +70,7 @@
 
 
 /* Info section */
-.login-pf body{
+.login-pf body {
     background: var(--keycloak-bg-logo-url) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
@@ -71,39 +94,40 @@ div.kc-logo-text span {
     display: inline-block;
 }
 
-.kc-login-tooltip .kc-tooltip-text{
-    top:-3px;
-    left:160%;
+.kc-login-tooltip .kc-tooltip-text {
+    top: -3px;
+    left: 160%;
     background-color: black;
     visibility: hidden;
     color: #fff;
 
-    min-width:130px;
+    min-width: 130px;
     text-align: center;
     border-radius: 2px;
-    box-shadow:0 1px 8px rgba(0,0,0,0.6);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
     padding: 5px;
 
     position: absolute;
-    opacity:0;
-    transition:opacity 0.5s;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 /*Show tooltip*/
 .kc-login-tooltip:hover .kc-tooltip-text {
     visibility: visible;
-    opacity:0.7;
+    opacity: 0.7;
 }
 
 /* Header with logo */
-/*.pf-v5-c-login__header {*/
-/*    grid-area: header;*/
-/*    text-align: center;*/
-/*    width: 100%;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
+.pf-v5-c-login__header {
+    grid-area: header;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+}
 
 #kc-header-wrapper {
     background: var(--keycloak-logo-url) no-repeat center center;
@@ -139,7 +163,6 @@ div.kc-logo-text span {
     font-size: 24px;
     font-weight: 600;
     color: #0065FF;
-    margin: 0 0 24px 0;
     text-align: center;
 }
 
@@ -177,7 +200,8 @@ div.kc-logo-text span {
 }
 
 /* Direct input elements with pf-v5-c-form-control class */
-input.pf-v5-c-form-control {
+input.pf-v5-c-form-control,
+div.pf-v5-c-form-control input {
     width: 100% !important;
     padding: 16px !important;
     border: 1px solid #e2e8f0 !important;
@@ -189,6 +213,15 @@ input.pf-v5-c-form-control {
     color: #2d3748 !important;
     font-family: inherit !important;
     display: block !important;
+}
+
+div.pf-v5-c-form-control {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
 }
 
 input.pf-v5-c-form-control:focus {
@@ -261,10 +294,14 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     border-color: #e53e3e !important;
     box-shadow: 0 0 0 1px #e53e3e !important;
     padding-right: 50px !important;
-    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23e53e3e'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m6 3v1.5m0 1.5h.01'/%3e%3c/svg%3e") !important; */
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/c9/Exclamation_flat_icon.svg") !important;
     background-repeat: no-repeat !important;
     background-position: right 16px center !important;
     background-size: 16px 16px !important;
+}
+
+span.pf-v5-c-form-control__utilities {
+    display: none !important;
 }
 
 /* PASSWORD INPUT GROUP STYLING */
@@ -344,24 +381,6 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 /* Checkbox styling */
-.pf-v5-c-check {
-    display: flex;
-    align-items: center;
-    margin: 16px 0;
-}
-
-.pf-v5-c-check__input {
-    margin: 0 8px 0 0;
-    width: 16px;
-    height: 16px;
-}
-
-.pf-v5-c-check__label {
-    font-size: 14px;
-    color: #4a5568;
-    margin: 0;
-    flex: 1;
-}
 
 /* Helper text with forgot password */
 .pf-v5-c-helper-text {
@@ -387,8 +406,10 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 .pf-v5-c-button.pf-m-primary {
     background: linear-gradient(90deg, #9EC0FA 0%, #C4ADFA 100%) !important;
     border: none !important;
-    border-radius: 999px !important; /* pill shape */
-    padding: 16px 0 !important;
+    border-radius: 999px !important;
+    /* pill shape */
+    padding: 0 !important;
+    height: 42px !important;
     font-size: 16px !important;
     font-weight: 600 !important;
     color: white !important;
@@ -396,6 +417,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     width: 100% !important;
     box-shadow: none !important;
 }
+
 
 .pf-v5-c-button.pf-m-primary:hover {
     background: var(--guardrail-primary-hover);
@@ -409,7 +431,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 
 /* Form actions */
 .pf-v5-c-form__actions {
-    margin-top: 8px !important; /* Reduce from 20px to 8px */
+    margin-top: 8px !important;
+    /* Reduce from 20px to 8px */
 }
 
 /* Alert styling */
@@ -458,6 +481,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     color: #667eea;
     text-decoration: none;
     font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
 }
 
 #kc-info a:hover,
@@ -468,8 +493,7 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 
 #kc-registration-container {
     /* background: url("https://generation-sessions.s3.amazonaws.com/992bca50d1a1be566686effdf99311ae/img/group-47.png") no-repeat center center; */
-    background-size: cover;
-    margin: 16px -32px -24px;
+
     padding: 20px 32px 32px;
     border-radius: 0 0 12px 12px;
     text-align: center;
@@ -478,7 +502,12 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 #kc-registration {
     background: transparent;
     font-size: 14px;
-    color: #718096;
+    color: #000000;
+}
+
+
+#kc-info {
+    margin-bottom: -100px;
 }
 
 /* Mobile responsive */
@@ -498,6 +527,19 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     /*    width: 100%;*/
     /*    max-width: 400px;*/
     /*}*/
+
+    .pf-v5-c-login__main {
+        overflow-y: auto;
+        max-height: 70vh;
+        margin: auto 40px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    body {
+        overflow: hidden !important;
+    }
 
     .pf-v5-c-login__main-header {
         padding: 24px 20px 0;
@@ -521,9 +563,11 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     #kc-info,
     #kc-registration-container,
     .pf-v5-c-login__main:not(:has(#kc-info)):not(:has(#kc-registration-container))::after {
-        margin: 16px -20px -24px;
-        padding: 16px 20px 24px;
         border-radius: 0 0 12px 12px;
+    }
+
+    #kc-info {
+        margin-bottom: -100px;
     }
 }
 
@@ -563,7 +607,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 
 /* Remove extra padding from form actions */
 .pf-v5-c-form__actions.pf-v5-u-pt-xs {
-    padding-top: 0 !important; /* Remove the top padding utility class */
+    padding-top: 0 !important;
+    /* Remove the top padding utility class */
 }
 
 /* Reduce margin on the form group containing the button */
@@ -573,23 +618,11 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 /*}*/
 
 /* Override the existing button margin that's set to 24px 0 */
-.pf-v5-c-button.pf-m-primary {
-    background: var(--guardrail-primary-gradient);
-    border: none;
-    border-radius: 16px;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 14px 24px;
-    width: 100%;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    margin: 8px 0 !important; /* Reduce from 24px to 8px */
-}
 
 /* Also target the button in form actions specifically */
 .pf-v5-c-form__actions .pf-v5-c-button.pf-m-primary {
-    margin: 0 !important; /* Remove all margin when inside form actions */
+    margin: 0 !important;
+    /* Remove all margin when inside form actions */
 }
 
 /* Reduce spacing after password helper text */
@@ -597,8 +630,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 8px !important; /* Reduce bottom margin */
+    /* padding: 20px !important; */
+    /* Reduce bottom margin */
 }
 
 /* Ensure error containers don't add extra space when empty */
@@ -620,7 +653,8 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 
 /* Special handling for the last form group before the button */
 .pf-v5-c-form__group:has(.pf-v5-c-input-group) {
-    margin-bottom: 12px !important; /* Even less space after password field */
+    /* margin-bottom: 12px !important; */
+    /* Even less space after password field */
 }
 
 /* Override PatternFly utility classes that might be adding extra spacing */
@@ -629,26 +663,25 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 .pf-v5-u-pb-xs {
-    padding-bottom: 4px !important; /* Reduce label bottom padding */
+    padding-bottom: 4px !important;
+    /* Reduce label bottom padding */
 }
 
 /* Tighten up the form group labels */
 .pf-v5-c-form__group-label {
-    margin-bottom: 4px !important; /* Reduce space between label and input */
+    margin-bottom: 4px !important;
+    /* Reduce space between label and input */
 }
 
 /* Make sure form actions don't add extra margin */
 .pf-v5-c-form__actions {
-    margin-top: 8px !important; /* Reduce from 20px to 8px */
+    margin-top: 8px !important;
+    /* Reduce from 20px to 8px */
 }
 
 /* Add this to your existing CSS file - Fix Remember me and Forgot Password layout */
 
 /* Override existing helper text styling to ensure proper flex layout */
-.pf-v5-c-form__helper-text {
-    margin-top: 8px;
-    margin-bottom: 8px !important;
-}
 
 .pf-v5-c-helper-text.pf-v5-u-display-flex.pf-v5-u-justify-content-space-between {
     display: flex !important;
@@ -668,32 +701,12 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 /* Style the checkbox container */
-.pf-v5-c-check {
-    display: flex !important;
-    align-items: center !important;
-    margin: 0 !important;
-    flex-shrink: 0 !important;
-}
 
-.pf-v5-c-check label.pf-v5-c-check {
-    display: flex !important;
-    align-items: center !important;
-    margin: 0 !important;
-    cursor: pointer !important;
-}
-
-.pf-v5-c-check__input {
-    margin: 0 8px 0 0 !important;
-    width: 16px !important;
-    height: 16px !important;
-    flex-shrink: 0 !important;
-}
 
 .pf-v5-c-check__label {
     font-size: 14px !important;
-    color: #4a5568 !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
+    color: #000000 !important;
+    /* white-space: nowrap !important; */
 }
 
 /* Style the forgot password container */
@@ -707,30 +720,18 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 .pf-v5-c-helper-text__item-text a {
-    color: #0065FF !important; /* Match your design's blue color */
+    color: #0065FF !important;
+    /* Match your design's blue color */
     text-decoration: none !important;
     font-size: 14px !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     white-space: nowrap !important;
 }
 
 .pf-v5-c-helper-text__item-text a:hover {
-    color: #0052CC !important; /* Darker blue on hover */
+    color: #0052CC !important;
+    /* Darker blue on hover */
     text-decoration: underline !important;
-}
-
-/* Mobile responsive - stack on small screens */
-@media (max-width: 480px) {
-    .pf-v5-c-helper-text.pf-v5-u-display-flex.pf-v5-u-justify-content-space-between {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 8px !important;
-    }
-
-    .pf-v5-c-check__label,
-    .pf-v5-c-helper-text__item-text a {
-        white-space: normal !important;
-    }
 }
 
 #kc-social-providers svg:not(.google) {
@@ -828,8 +829,10 @@ span.pf-v5-c-form-control input[aria-invalid="true"] {
 }
 
 #reset-login {
-    display: none !important; /* Hide the reset login button */
+    display: none !important;
+    /* Hide the reset login button */
 }
+
 input.pf-v5-c-form-control::placeholder {
     color: rgba(0, 0, 0, 0.6) !important;
     font-size: 14px !important;
@@ -850,3 +853,6 @@ span.pf-v5-c-alert__title.kc-feedback-text {
     color: #ED6C02
 }
 
+.pf-v5-c-form__group.pf-m-action {
+    overflow: visible;
+}
