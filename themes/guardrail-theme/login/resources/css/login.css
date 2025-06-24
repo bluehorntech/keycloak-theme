@@ -500,7 +500,7 @@ span.pf-v5-c-form-control__utilities {
 
 #kc-registration {
     background: transparent;
-    font-size: 14px;
+    font-size: 16px;
     color: #000000;
 }
 
@@ -854,6 +854,11 @@ span.pf-v5-c-alert__title.kc-feedback-text {
 
 .pf-v5-c-form__group.pf-m-action {
     overflow: visible;
+}
+
+.instruction {
+    font-size: 16px !important;
+    color: #000000 !important;
 }
 
 
