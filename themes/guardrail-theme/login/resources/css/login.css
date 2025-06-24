@@ -405,7 +405,7 @@ span.pf-v5-c-form-control__utilities {
 .pf-v5-c-button.pf-m-primary {
     background: linear-gradient(90deg, #9EC0FA 0%, #C4ADFA 100%) !important;
     border: none !important;
-    border-radius: 999px !important;
+    border-radius: 16px !important;
     /* pill shape */
     padding: 0 !important;
     height: 42px !important;
@@ -767,6 +767,7 @@ span.pf-v5-c-form-control__utilities {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     box-sizing: border-box !important;
     position: relative !important;
+    height: 42px !important;
 }
 
 /* === Hover and Active States === */
