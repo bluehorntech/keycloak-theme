@@ -1,9 +1,9 @@
-<#import "template.ftl" as layout>
+<#import "template.ftl" as layout>More actions
 <#import "field.ftl" as field>
 <#import "buttons.ftl" as buttons>
 <#import "social-providers.ftl" as identityProviders>
 <#import "passkeys.ftl" as passkeys>
-<@layout.registrationLayout displayMessage=messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
+<@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
 <!-- template: login.ftl -->
 
     <#if section = "header">
@@ -25,7 +25,7 @@
                             </#if>
                         </@field.password>
                     <#else>
-                        <@field.password name="password" label=msg("password") error="" forgotPassword=realm.resetPasswordAllowed autofocus=usernameHidden?? autocomplete="current-password">
+                        <@field.password name="password" label=msg("password") forgotPassword=realm.resetPasswordAllowed autofocus=usernameHidden?? autocomplete="current-password">
                             <#if realm.rememberMe && !usernameHidden??>
                                 <@field.checkbox name="rememberMe" label=msg("rememberMe") value=login.rememberMe?? />
                             </#if>
