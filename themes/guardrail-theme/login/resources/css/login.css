@@ -434,6 +434,21 @@ span.pf-v5-c-form-control__utilities {
     /* Reduce from 20px to 8px */
 }
 
+#updateProfile {
+    background: linear-gradient(90deg, #9EC0FA 0%, #C4ADFA 100%) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    /* pill shape */
+    margin-top: 20px !important;
+    height: 42px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-shadow: none !important;
+}
+
 /* Alert styling */
 .pf-v5-c-alert.pf-m-inline {
     background: #fed7d7;
@@ -844,6 +859,20 @@ input.pf-v5-c-form-control::placeholder {
     border-bottom: none;
     border-radius: 0;
     border-top-color: #ED6C02
+}
+
+.pf-v5-c-alert.pf-m-inline.pf-v5-u-mb-md.pf-m-danger {
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    border-top-color: #D32F2F
+}
+
+.pf-v5-c-alert.pf-m-inline.pf-v5-u-mb-md.pf-m-danger span.pf-v5-c-alert__title.kc-feedback-text {
+    color: #D32F2F;
+    text-align: center;
 }
 
 
