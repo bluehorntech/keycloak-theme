@@ -43,7 +43,6 @@ body {
 /* Remove default card top border */
 .pf-v5-c-login__main-header {
     border-top: none;
-    padding: 32px 32px 0;
     text-align: center;
 }
 
@@ -541,16 +540,15 @@ span.pf-v5-c-form-control__utilities {
         overflow: hidden !important;
     }
 
-    .pf-v5-c-login__main-header {
+    /* .pf-v5-c-login__main-header {
         padding: 24px 20px 0;
-    }
+    } */
 
     .pf-v5-c-login__main-body {
         padding: 0 20px 24px;
     }
 
     .pf-v5-c-login__main-footer {
-
         padding: 16px 20px;
         text-align: center;
     }
@@ -850,7 +848,8 @@ input.pf-v5-c-form-control::placeholder {
 
 
 span.pf-v5-c-alert__title.kc-feedback-text {
-    color: #ED6C02
+    color: #ED6C02;
+    text-align: center;
 }
 
 .pf-v5-c-form__group.pf-m-action {
