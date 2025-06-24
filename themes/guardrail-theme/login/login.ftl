@@ -1,4 +1,4 @@
-<#import "template.ftl" as layout>More actions
+<#import "template.ftl" as layout>
 <#import "field.ftl" as field>
 <#import "buttons.ftl" as buttons>
 <#import "social-providers.ftl" as identityProviders>
