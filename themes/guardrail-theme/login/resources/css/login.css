@@ -450,8 +450,8 @@ span.pf-v5-c-form-control__utilities {
     box-shadow: none !important;
 }
 
-
-.pf-v5-c-button.pf-m-block {
+/* Keep this one incase need to use styling the forgot passsword */
+/* .pf-v5-c-button.pf-m-block {
     border-radius: 16px !important;
     height: 42px !important;
     font-size: 16px !important;
@@ -464,6 +464,21 @@ span.pf-v5-c-form-control__utilities {
     background: none !important;
     color: #9155A2 !important;
     margin-top: 20px !important;
+} */
+
+#linkAccount {
+    border-radius: 16px !important;
+    height: 42px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    outline: 1px solid !important;
+    border-image: linear-gradient(90deg, #9EC0FA 0%, #C4ADFA 100%) 1 !important;
+    background: none !important;
+    color: #9155A2 !important;
+    margin-top: 20px !important;    
 }
 
 /* Alert styling */
